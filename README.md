@@ -1,6 +1,6 @@
 # Scala-Conditions
 
-I explore the conditions notions (if ... else), pattern matching and loops. 
+I explore the conditions notions (if ... else), pattern matching, loops and some functions notions. 
 
 Some exercises to apply the conditions:
 
@@ -62,4 +62,35 @@ for (i <- 1 to 100)
     case i =>println(i)
   }
   ```
+  
+ 6. Write a function that calculates the area of a circle according to its radius.
+ 
+ ```
+ val pi:Double=3.14
+ def area (r: Double)=pi*(r*r)
+ area(4.5)
+ ```
+ 
+ 7. Provide another form of the function in Exercise 6 that takes the radius as a string. What happens if your function is invoked with an empty string?
+
+```
+def area (r: String)=pi*(r.toDouble *r.toDouble)
+area("2")
+```
+
+8. Write a recursive function that prints values from 5 to 50 by five, without using the for or while function in the loops. Can you make it recursive? With the scala recursion optimizer?
+
+```
+def req2 (d:Int) : Unit = {
+  if (d>=5){if (d%5==4){
+    req2(d-1)
+    print(d+","+"\n")}
+    else {
+    req2(d-1)
+    print(d+",")}}
+}
+
+req2(49)
+```
+
 
